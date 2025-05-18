@@ -2,14 +2,14 @@ package com.example.dozy.model;
 
 public class User {
     private String username;
-    private String telefono;
-    private String correo;
+    private String phone;
+    private String email;
 
     public User() {}
-    public User(String username, String telefono, String correo) {
+    public User(String username, String phone, String email) {
         this.username = username;
-        this.telefono = telefono;
-        this.correo = correo;
+        this.phone = phone;
+        this.email = email;
     }
 
     public String getUsername() {
@@ -20,19 +20,19 @@ public class User {
         this.username = username;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
