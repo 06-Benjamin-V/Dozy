@@ -1,6 +1,14 @@
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
+    id("org.sonarqube") version "3.5.0.2730"
+}
+sonarqube {
+    properties {
+        property("sonar.projectKey", "Dozy")
+        property("sonar.host.url", "http://localhost:9000")
+        property("sonar.login", "sqp_67f07fb96110dffc08bfa590effe31802a2caa7f")
+    }
 }
 
 android {
