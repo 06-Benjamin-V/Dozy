@@ -1,4 +1,4 @@
-package com.example.dozy.auth;
+package com.example.dozy.managers;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

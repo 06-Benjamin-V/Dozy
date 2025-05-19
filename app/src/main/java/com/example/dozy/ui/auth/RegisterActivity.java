@@ -1,4 +1,4 @@
-package com.example.dozy.auth.ui;
+package com.example.dozy.ui.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dozy.R;
-import com.example.dozy.auth.AuthManager;
+import com.example.dozy.managers.AuthManager;
 import com.example.dozy.model.User;
 import com.example.dozy.repository.UserRepository;
 import com.google.firebase.auth.FirebaseUser;
