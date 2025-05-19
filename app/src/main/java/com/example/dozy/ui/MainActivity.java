@@ -1,4 +1,4 @@
-package com.example.dozy;
+package com.example.dozy.ui;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
