@@ -7,7 +7,7 @@ sonarqube {
     properties {
         property("sonar.projectKey", "Dozy")
         property("sonar.host.url", "http://localhost:9000")
-        property("sonar.token", "sqp_152a5c7b824d273d980596350122c6087158bf7f")
+        property("sonar.token", "sqp_a309fc560b8d39b537ba6ede60293b33cafbd09d")
     }
 }
 
