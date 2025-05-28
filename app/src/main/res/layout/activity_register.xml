@@ -112,12 +112,14 @@
                 android:id="@+id/goToLoginBt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿tienes cuenta? Inicia sesion"
+                android:text="¿Tienes cuenta? Inicia sesión"
                 android:textColor="@color/purple_500"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@android:color/transparent"
+                android:background="@android:color/transparent"
+                android:elevation="0dp"
+                android:stateListAnimator="@null"
                 android:gravity="center" />
 
     </LinearLayout>
