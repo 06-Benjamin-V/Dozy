@@ -44,7 +44,7 @@ public class TaskService {
         task.setUserId(userId);
         ApiFuture<WriteResult> result = firestore.collection("users")
                 .document(userId)
-                .collection("task")
+                .collection("tasks")
                 .document(taskId)
                 .set(task);
         result.get();

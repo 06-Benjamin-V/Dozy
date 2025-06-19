@@ -46,7 +46,7 @@ tasks.jacocoTestReport {
 
 sonarqube {
 	properties {
-		property("sonar.projectKey", "dozyBack") // cambia por el nombre de tu proyecto
+		property("sonar.projectKey", "dozyBack")
 		property("sonar.projectName", "dozyBack")
 		property("sonar.host.url", "http://localhost:9000") // dirección del servidor Sonar
 		property("sonar.token", "sqp_5c145a9e06585e69461c2a97bfcb3d8f5c5f6d98") // token generado en tu SonarQube

@@ -17,7 +17,6 @@ public class FirebaseConfig {
     @Bean
     public Firestore firestore() throws IOException {
         if (FirebaseApp.getApps().isEmpty()) {
-            // Cargar desde classpath
             InputStream serviceAccount = getClass()
                     .getClassLoader()
                     .getResourceAsStream("serviceAccountKey.json");

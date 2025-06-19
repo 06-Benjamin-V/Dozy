@@ -103,4 +103,55 @@ class TaskServiceTest {
 
         assertTrue(result.contains(taskId));
     }
+
+    @Test
+    void testUpdateTask() throws Exception {
+        String userId = "user1";
+        String taskId = "task1";
+        Task task = new Task();
+
+        CollectionReference users = mock(CollectionReference.class);
+        DocumentReference userDoc = mock(DocumentReference.class);
+        CollectionReference tasks = mock(CollectionReference.class);
+        DocumentReference taskDoc = mock(DocumentReference.class);
+        ApiFuture<WriteResult> future = mock(ApiFuture.class);
+
+        when(firestore.collection("users")).thenReturn(users);
+        when(users.document(userId)).thenReturn(userDoc);
+        when(userDoc.collection("tasks")).thenReturn(tasks);
+        when(tasks.document(taskId)).thenReturn(taskDoc);
+        when(taskDoc.set(task)).thenReturn(future);
+        when(future.get()).thenReturn(mock(WriteResult.class));
+
+        String result = taskService.updateTask(userId, taskId, task);
+        assertTrue(result.contains(taskId));
+    }
+
+    @Test
+    void testGetTaskByUser() throws Exception {
+        String userId = "user1";
+        Task task = new Task();
+
+        CollectionReference users = mock(CollectionReference.class);
+        DocumentReference userDoc = mock(DocumentReference.class);
+        CollectionReference tasks = mock(CollectionReference.class);
+        ApiFuture<QuerySnapshot> future = mock(ApiFuture.class);
+        QuerySnapshot snapshot = mock(QuerySnapshot.class);
+        QueryDocumentSnapshot document = mock(QueryDocumentSnapshot.class);
+
+        when(firestore.collection("users")).thenReturn(users);
+        when(users.document(userId)).thenReturn(userDoc);
+        when(userDoc.collection("tasks")).thenReturn(tasks);
+        when(tasks.get()).thenReturn(future);
+        when(future.get()).thenReturn(snapshot);
+        when(snapshot.getDocuments()).thenReturn(List.of(document));
+        when(document.toObject(Task.class)).thenReturn(task);
+
+        List<Task> result = taskService.getTaskByUser(userId);
+
+        assertEquals(1, result.size());
+        assertSame(task, result.get(0));
+    }
+
+
 }
